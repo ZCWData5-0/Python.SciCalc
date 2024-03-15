@@ -25,10 +25,10 @@ class Calculator:
         self.currentValue = x - y
 
     def mul(self, x, y):
-        raise NotImplementedError
+        self.currentValue = x * y
 
     def div(self, x, y):
-        raise NotImplementedError
+        self.currentValue = x / y
 
 
 # add lots more methods to this calculator class.
