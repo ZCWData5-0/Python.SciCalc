@@ -21,14 +21,17 @@ def performCalcLoop(calc):
             displayResult(calc.add(a, b))
         else:
             print("That is not a valid input.")
+    print("Bye.")
 
 
 # main start
 def main():
     calc = Calculator()
     performCalcLoop(calc)
-    print("Done Calculating.")
 
-
+#
+### WHAT does this idiom do?
+# Maybe some group research is in order.
+#
 if __name__ == '__main__':
     main()

@@ -1,28 +1,36 @@
 # Python.ScientificCalculator
 
 ## Description
-* **Objective** - To implement an `ScientificCalculator` which displays output of basic and scientific computations.
-* **Purpose** - To establish familiarity with:
-  * Object `state`
-  * Teamwork :+1:
 
+- **Objective** - To implement an `ScientificCalculator` which displays output of basic and scientific computations.
+- **Purpose** - To establish familiarity with:
+  - Object `state`
+  - Teamwork :+1:
+- Make TWO calculators
+  - one that uses standard input/print and runs in a terminal
+  - one that uses Tk for a GUI
 
 ## Git Collaboration
-* Click the `fork` button in the top right corner to create a copy of this repository on your github account.
-  * You can go through the [GitHub forking tutorial](https://help.github.com/articles/fork-a-repo/) if you need additional practice with this.
-* You should work on this project in your own repository.
 
+- Click the `fork` button in the top right corner to create a copy of this repository on your github account.
+  - You can go through the [GitHub forking tutorial](https://help.github.com/articles/fork-a-repo/) if you need additional practice with this.
+- Make a github organization, fork this repo into that new Org
+- make each of you a contributor to that org
+- make separate BRANCHES for each you, practice doing Pull Requests back to the Main branch
+- Make sure Main is always runnable
 
 ## Requirements
 
 ### Testing
 
-* All features must be tested.
-* Tests must include normal behavior, and any possible error situations.
-* Tests must have descriptive names and should be independent of each other (running or not running one test should not influence the behavior of any other test).
+- All features must be tested.
+- Tests must include normal behavior, and any possible error situations.
+- Tests must have descriptive names and should be independent of each other (running or not running one test should not influence the behavior of any other test).
 
 ### Core Features
-* All calculators should have the following features:
+
+- All calculators should have the following features:
+
   - A `state`, representing the value currently displayed on the calculator (default 0)
   - Get the current number on the display
   - Clear the display
@@ -34,19 +42,18 @@
   - Update the display to `Err` if an error occurs (eg: Division by zero)
     - Errors must be cleared before any other operation can take place
 
-* Each operation should automatically update the display
-* YOU MAY NEED to break your code into several .py files so that you can do your `git` stuff easier.
-
+- Each operation should automatically update the display
+- YOU MAY NEED to break your code into several .py files so that you can do your `git` stuff easier.
 
 ### Scientific Features
 
 - Switch display mode (binary, octal, decimal, hexadecimal)
   - `switchDisplayMode()` should rotate through the options
   - `switchDisplayMode(String mode)` should set the display to the mode given
-- Memory - Store up to one numeric value in memory for recall later (default to 0) *
-  - (`M+` key) Add the currently displayed value to the value in memory (store in memory and update display) *
-  - (`MC` key) Reset memory *
-  - (`MRC` key) Recall the current value from memory to the display *
+- Memory - Store up to one numeric value in memory for recall later (default to 0) \*
+  - (`M+` key) Add the currently displayed value to the value in memory (store in memory and update display) \*
+  - (`MC` key) Reset memory \*
+  - (`MRC` key) Recall the current value from memory to the display \*
 - Trig functions
   - Sine - Calculate the sine of the displayed value and display it
   - Cosine - Calculate the cosine of the displayed value and display it
@@ -59,14 +66,13 @@
   - `switchUnitsMode(String mode)` should set the trig units to the type given
 
 ### Bonus
-- Factorial function  
+
+- Factorial function
 - Logarithmic functions
   - Log
   - 10<sup>x</sup> (inverse logarithm)
   - Ln (natural logarithm)
   - e<sup>x</sup> (inverse natural logarithm)
-
-
 
 ### Custom Features
 
