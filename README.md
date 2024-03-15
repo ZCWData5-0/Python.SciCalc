@@ -13,6 +13,7 @@
 - Make TWO calculators
   - one that uses standard input/print and runs in a terminal
   - one that uses Tk for a GUI
+  - write you some unit tests for great good
 - Try `python3 main-app.py` and `python3 guicalc.py`
 
 ## Git Collaboration

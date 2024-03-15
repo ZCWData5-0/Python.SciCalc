@@ -30,6 +30,7 @@ class CalcGUI:
         self.create_button(".", 4, 2)
         self.create_button("C", 4, 0)
         self.create_button("=", 5, 3)
+
         ## YOU need to add lots more buttons for the added funcs
 
         # Initialize the calculator state
