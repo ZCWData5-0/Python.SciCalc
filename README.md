@@ -6,9 +6,14 @@
 - **Purpose** - To establish familiarity with:
   - Object `state`
   - Teamwork :+1:
+- You start with some working code as a template
+- There are some other calcs in eval_guis
+  - these do not use a Calculator engine object
+  - they use `eval()`; eval is consider harmful for a [variety of reasons](https://stackoverflow.com/questions/1832940/why-is-using-eval-a-bad-practice)
 - Make TWO calculators
   - one that uses standard input/print and runs in a terminal
   - one that uses Tk for a GUI
+- Try `python3 main-app.py` and `python3 guicalc.py`
 
 ## Git Collaboration
 
