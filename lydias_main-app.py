@@ -1,9 +1,9 @@
-from calculator import Calculator
+from lydias_calculator import Calculator
 
 
 def getTwoNumbers():
-    a = float(input("first number? "))
-    b = float(input("second number? "))
+    a = float(input("Enter your first number: "))
+    b = float(input("Enter your second number: "))
     return a, b
 
 

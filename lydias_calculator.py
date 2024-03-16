@@ -1,6 +1,4 @@
-# remember, in Python classes are easier to use than Java.
-#
-from math import nan
+import math
 
 
 class Calculator:
@@ -37,6 +35,17 @@ class Calculator:
             # TODO Consider logging the error, if a logger is defined
             self.currentValue = None
             self.currentMsg = "DIV BY ZERO"
+
+    def common_log(self, x):
+        try:
+            self.currentValue = math.log10(x)
+        except ValueError:
+            if x <= 0:
+                self.currentValue = None
+                self.currentMsg = 'NEG NUM ERROR'
+
+    def inverse_common_log(self, x):
+        self.currentValue = math.pow(10, x)
 
 
 

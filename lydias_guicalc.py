@@ -1,5 +1,5 @@
 import tkinter as tk
-from calculator import Calculator
+from lydias_calculator import Calculator
 
 class CalcGUI:
     def __init__(self, master, engine):
