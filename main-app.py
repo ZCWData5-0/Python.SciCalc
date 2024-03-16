@@ -32,9 +32,11 @@ def main():
     calc = Calculator()
     performCalcLoop(calc)
 
-#
 ### WHAT does this idiom do?
-# Maybe some group research is in order.
-#
+#     ANSWER BELOW:     # Maybe some group research is in order.
+
+#if__name__=='__main__' Allows You # to Execute Code
+# When the File Runs as a Script, but Not When It’s Imported as a Module
+
 if __name__ == '__main__':
     main()
