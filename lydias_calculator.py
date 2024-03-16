@@ -6,6 +6,7 @@ class Calculator:
     def __init__(self):
         self.currentValue = 0.0
         self.currentMsg = ""
+        self.stored_value = 0.0
 
     def __str__(self):
         return str(self.currentValue)
@@ -34,7 +35,7 @@ class Calculator:
             # TODO Make sure calling functions know how to handle a None value
             # TODO Consider logging the error, if a logger is defined
             self.currentValue = None
-            self.currentMsg = "DIV BY ZERO"
+            self.currentMsg = 'DIV BY ZERO'
 
     def common_log(self, x):
         try:
@@ -47,6 +48,30 @@ class Calculator:
     def inverse_common_log(self, x):
         self.currentValue = math.pow(10, x)
 
+    def multiplicative_inverse(self):
+        try:
+            self.currentValue = 1 / self
+        except ZeroDivisionError:
+            if self == 0:
+                self.currentValue = None
+                self.currentMsg = 'DIV BY ZERO'
 
+    def inverse_of_number(self):
+        try:
+            if self != 0:
+                self.currentValue = abs(self)
+        except ValueError:
+            if self == 0:
+                self.currentValue = None
+                self.currentMsg = 'ZERO INVALID'
+
+    def save_to_memory(self):
+        self.stored_value = self.currentValue
+
+    def reset_memory(self):
+        self.stored_value = 0.0
+
+    def recall_from_memory(self):
+        self.currentValue = self.stored_value
 
 # add lots more methods to this calculator class.
