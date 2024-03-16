@@ -84,6 +84,7 @@ def main():
     root = tk.Tk()
     calculator = CalcGUI(root, calc_engine)
     root.mainloop()
+    # root.mainloop() pauses the execution of any further lines of code here
 
 #
 ### WHAT does this idiom do?

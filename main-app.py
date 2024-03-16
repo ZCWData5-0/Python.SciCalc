@@ -7,8 +7,11 @@ def getTwoNumbers():
     return a, b
 
 
-def displayResult(x: float):
-    print(x, "\n")
+def displayResult(c: Calculator):
+    if c.currentValue is None:
+        print(c.currentMsg)
+    else:
+        print(c.currentValue, "\n")
 
 
 def performCalcLoop(calc):
@@ -18,7 +21,9 @@ def performCalcLoop(calc):
             break  # user types q to quit calulator.
         elif choice == 'add':
             a, b = getTwoNumbers()
-            displayResult(calc.add(a, b))
+            calc.add(a,b)
+            displayResult(calc)
+            #displayResult(calc.add(a, b))
         elif choice == 'sub':
             a, b = getTwoNumbers()
             displayResult(calc.sub(a, b))
