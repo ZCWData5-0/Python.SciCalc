@@ -1,4 +1,4 @@
-from calculator import Calculator
+from calculatorNat import Calculator
 
 
 def getTwoNumbers():

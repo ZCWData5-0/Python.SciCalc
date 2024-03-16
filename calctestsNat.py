@@ -1,5 +1,5 @@
 import unittest
-from calculator import Calculator
+from calculatorNat import Calculator
 
 
 class TestStringMethods(unittest.TestCase):

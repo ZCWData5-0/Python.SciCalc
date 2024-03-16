@@ -14,6 +14,20 @@ class Calculator:
     def clear(self):
         self.currentValue = 0.0
 
+    # KRIS' clear function above, mine below.
+    # Why did Kris give a clear function if we also had to?
+    #
+    #CLEAR
+    # def clear(self, x, y):
+    #     self.delete(0, 999)
+    #     #youtube code was: txtDisplay.delete(0, END)
+    #
+    #CLEAR ALL
+    # def clear_all(self, x, y):
+    #     #clear text display (TEST THIS!)
+    #     self.delete(0, 999)
+    #     #youtube code was: txtDisplay.delete(0, END)
+
     def value(self):
         return self.currentValue
 
@@ -32,14 +46,16 @@ class Calculator:
         self.currentValue = x / y
         #raise NotImplementedError
 
-    def clear(self, x, y):
-        self.delete(0, 999)
-        #youtube code was: txtDisplay.delete(0, END)
 
-    def clear_all(self, x, y):
-        #clear text display (TEST THIS!)
-        self.delete(0, 999)
-        #youtube code was: txtDisplay.delete(0, END)
+    # Python program to convert decimal into other number systems
+    dec = 409 #need to feed the input to this variable
+
+    print("The decimal value of", dec, "is:") #Ensure "Print" is going to Display
+    print(bin(dec), "in binary.")
+    print(oct(dec), "in octal.")
+    print(hex(dec), "in hexadecimal.")
+
+
 
         #reinitialize all variables
         #global first_number, second_number, Operation, Final_answer
@@ -54,7 +70,7 @@ class Calculator:
 # degrees() and radians()
 
 # importing "math" for mathematical operations
-import math
+#import math
 
 # a = math.pi/6
 # b = 30
