@@ -14,20 +14,6 @@ class Calculator:
     def clear(self):
         self.currentValue = 0.0
 
-    # KRIS' clear function above, mine below.
-    # Why did Kris give a clear function if we also had to?
-    #
-    #CLEAR
-    # def clear(self, x, y):
-    #     self.delete(0, 999)
-    #     #youtube code was: txtDisplay.delete(0, END)
-    #
-    #CLEAR ALL
-    # def clear_all(self, x, y):
-    #     #clear text display (TEST THIS!)
-    #     self.delete(0, 999)
-    #     #youtube code was: txtDisplay.delete(0, END)
-
     def value(self):
         return self.currentValue
 
@@ -48,37 +34,45 @@ class Calculator:
 
 
     # Python program to convert decimal into other number systems
-    dec = 409 #need to feed the input to this variable
+    # dec = 409 #need to feed the input to this variable
+    #
+    # print("The decimal value of", dec, "is:") #Ensure "Print" is going to Display
+    # print(bin(dec), "in binary.")
+    # print(oct(dec), "in octal.")
+    # print(hex(dec), "in hexadecimal.")
 
-    print("The decimal value of", dec, "is:") #Ensure "Print" is going to Display
-    print(bin(dec), "in binary.")
-    print(oct(dec), "in octal.")
-    print(hex(dec), "in hexadecimal.")
+    #Python program to convert decimal into other number systems
+
+    #HOW TO ACTIVATE & MAKE BUTTON FOR THIS?
+
+    # def displayModeBin(self):
+    #     displayMode = self.currentValue  # WHAT GOES HERE? Need to feed the input to this variable
+    #     return ("The decimal value of", displayMode, "is:")  # Ensure this is going to Display
+    #     return (bin(displayModeBin), "in binary.")
+
+    # def displayModeOct(self):
+    #     displayMode = self.currentValue  # WHAT GOES HERE? Need to feed the input to this variable
+    #     return ("The decimal value of", displayMode, "is:")  # Ensure this is going to Display
+    #     return (oct(displayModeOct), "in octal.")
+    #
+    #
+    # def displayModeDec(self):
+    #     displayMode = self.currentValue  # WHAT GOES HERE? Need to feed the input to this variable
+    #     return ("The decimal value of", displayMode, "is:")  # Ensure this is going to Display
+    #     return (hex(displayMode), "in decimal.")
+    #
+    #
+    # def displayModeHex(self):
+    #     displayMode = self.currentValue  # WHAT GOES HERE? Need to feed the input to this variable
+    #     return ("The decimal value of", displayMode, "is:")  # Ensure this is going to Display
+    #     return (hex(displayMode), "in hexadecimal.")
 
 
-
-        #reinitialize all variables
-        #global first_number, second_number, Operation, Final_answer
-        #first_number = 0
-        #second_number = 0
-        #Operation = 0
-        #Final_answer = 0
-
-# add lots more methods to this calculator class.
-
-# IMPERFECT(?) Python code to demonstrate the working of
-# degrees() and radians()
-
-# importing "math" for mathematical operations
-#import math
-
-# a = math.pi/6
-# b = 30
+# MASTER ORIGINAL
+# def displayMode(self):
+#     displayMode = self.currentValue  # WHAT GOES HERE? Need to feed the input to this variable
 #
-# # returning the converted value from radians to degrees
-# print ("The converted value from radians to degrees is : ", end="")
-# print (math.degrees(a))
-#
-# # returning the converted value from degrees to radians
-# print ("The converted value from degrees to radians is : ", end="")
-# print (math.radians(b))
+#     return ("The decimal value of", displayMode, "is:")  # Ensure this is going to Display
+#     return (bin(displayMode), "in binary.")
+#     return (oct(displayMode), "in octal.")
+#     return (hex(displayMode), "in hexadecimal.")
