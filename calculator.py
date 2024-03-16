@@ -1,5 +1,6 @@
 # remember, in Python classes are easier to use than Java.
 #
+import math
 from math import nan
 
 
@@ -7,7 +8,19 @@ class Calculator:
 
     def __init__(self):
         self.currentValue = 0.0
+        self.trigUnitMode='degrees'     #my code
 
+    def switchUnitsMode(self, uMode = 'none'):  #my code
+        if uMode == 'none':
+            if self.trigUnitMode =='degrees':
+                self.trigUnitMode  = 'radians'
+            else:
+                self.trigUnitMode = 'degrees'
+        else:
+            self.trigUnitMode=uMode
+
+    def getTrigUnitMode(self):
+        return self.trigUnitMode
     def __str__(self):
         return str(self.currentValue)
 
@@ -20,6 +33,7 @@ class Calculator:
     # evaluation routines
     def add(self, x, y):
         self.currentValue = x + y
+        return self.currentValue
 
     def sub(self, x, y):
         self.currentValue = x - y
@@ -29,6 +43,18 @@ class Calculator:
 
     def div(self, x, y):
         self.currentValue = x / y
+
+    def square(self):   #my code
+        self.currentValue*=self.currentValue
+        return self.currentValue
+
+    def square_root(self):  #my code
+        self.currentValue=math.sqrt(self.currentValue)
+        return self.currentValue
+
+    def factorial(self):
+        self.currentValue = math.factorial(self.currentValue)
+        return self.currentValue
 
 
 # add lots more methods to this calculator class.
