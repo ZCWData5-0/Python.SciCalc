@@ -27,14 +27,28 @@ def performCalcLoop(calc):
         if calc.value == 0.0:
             displayResult(calc.value())
         choice = input("Operation? ")
-        if choice == 'q':
+        if choice == 'q' or 'quit':
             break  # user types q to quit calulator.
-        elif choice == '+':
+        elif choice == 'c' or 'clear':
+            calc.clear()
+        elif choice == '+' or 'add':
             a = getNumber()
             calc.add(calc.value(), a)
-        elif choice == '-':
+        elif choice == '-' or 'subtract' or 'sub':
             a = getNumber()
             calc.sub(calc.value(), a)
+        elif choice == '*' or 'multiply' or 'mul':
+            a = getNumber()
+            calc.mul(calc.value(), a)
+        elif choice == '/' or 'divide' or 'div':
+            a = getNumber()
+            calc.div(calc.value(), a)
+        elif choice == 'square' or '^2':  # my code
+            calc.square(calc.value())
+        elif choice == 'square root' or 'sqrt':  # my code
+            calc.square_root(calc.value())
+        elif choice == 'factorial' or 'fact':
+            calc.factorial(calc.value())
         else:
             print("That is not a valid input.")
     print("Bye.")
@@ -43,13 +57,19 @@ def performCalcLoop(calc):
 # main start
 def main():
     calc = Calculator()
+    calc1 = Calculator()
+    print(calc.getTrigUnitMode())
+    print(calc1.getTrigUnitMode())
+    calc1.switchUnitsMode()
+    print(calc.getTrigUnitMode())
+    print(calc1.getTrigUnitMode())
+
+    # print(calc.getTrigUnitMode())
+    # calc.switchUnitsMode('degrees')
+    # print(calc.getTrigUnitMode())
+    # calc.switchUnitsMode('deges')
+    # print(calc.getTrigUnitMode())
     performCalcLoop(calc)
-
-#
-### WHAT does this idiom do?
-# Maybe some group research is in order.
-#
-
 
 if __name__ == '__main__':
     main()
