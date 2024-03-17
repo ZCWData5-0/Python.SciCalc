@@ -27,9 +27,14 @@ class Calculator:
         return str(self.currentValue)
 
     def set_value(self): # chris' code
-        if self.currentValue == 0.0:
-            x = float(input("Enter a value:"))
-            self.currentValue = x
+            try:
+                if self.currentValue == 0.0:
+                    x = float(input("Enter a number:"))
+                    self.currentValue = x
+            except ValueError:
+                print("Please enter a number")
+                self.set_value()
+
 
 
 

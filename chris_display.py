@@ -27,17 +27,17 @@ def performCalcLoop(calc):
         if calc.value == 0.0:
             displayResult(calc.value())
         choice = input("Operation? ")
-        if choice == 'q' or 'quit':
+        if choice == 'q':
             break  # user types q to quit calulator.
-        elif choice == 'c' or 'clear':
+        elif choice == 'c':
             calc.clear()
-        elif choice == '+' or 'add':
+        elif choice == '+':
             a = getNumber()
             calc.add(calc.value(), a)
-        elif choice == '-' or 'subtract' or 'sub':
+        elif choice == '-':
             a = getNumber()
             calc.sub(calc.value(), a)
-        elif choice == '*' or 'multiply' or 'mul':
+        elif choice == '*':
             a = getNumber()
             calc.mul(calc.value(), a)
         elif choice == '/' or 'divide' or 'div':
