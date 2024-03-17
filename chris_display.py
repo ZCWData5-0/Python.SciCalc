@@ -67,12 +67,12 @@ def performCalcLoop(calc):
 # main start
 def main():
     calc = Calculator()
-    calc1 = Calculator()
-    print(calc.getTrigUnitMode())
-    print(calc1.getTrigUnitMode())
-    calc1.switchUnitsMode()
-    print(calc.getTrigUnitMode())
-    print(calc1.getTrigUnitMode())
+    #calc1 = Calculator()
+   # print(calc.getTrigUnitMode())
+    #print(calc1.getTrigUnitMode())
+    #calc1.switchUnitsMode()
+    #print(calc.getTrigUnitMode())
+   # print(calc1.getTrigUnitMode())
 
     # print(calc.getTrigUnitMode())
     # calc.switchUnitsMode('degrees')
