@@ -7,7 +7,6 @@ class TestStringMethods(unittest.TestCase):
     def test_add(self):
         c = Calculator()
         self.assertEqual(c.add(3, 3), 6)
-        #Not passing correct arguments thru yet, trying again tomorrow onsite.
 
     def test_add2(self):
         c = Calculator()
@@ -79,11 +78,6 @@ class TestStringMethods(unittest.TestCase):
             c = Calculator()
             self.assertEqual(c.div(8, 4), 2)
 
-
- #NOT SURE HOW TO TEST THESE YET:  Binary | Octal | Decimal(default) | Hexidecimal
-    # def displayModeBin(self):
-    #     c = Calculator()
-    #     self.assertEqual(c.displayMode(3, 3), 6)
 
 
 if __name__ == '__main__':
