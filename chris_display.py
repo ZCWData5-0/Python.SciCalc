@@ -2,13 +2,10 @@ import calculator
 
 ################################
 #please de-comment this and paste it within the calculator.py Class calulator to full functionality! :)
-#def set_value(self):
-#    if self.currentValue == 0.0:
-#        x = float(input("Enter a value:"))
-#        self.currentValue = x
+
 ################################
 
-from calculator import Calculator
+from lydias_calculator import Calculator
 
 
 def getNumber():
@@ -59,6 +56,8 @@ def performCalcLoop(calc):
             calc.factorial(calc.value())
         elif choice.__contains__('inv') and not choice.__contains__('mul'):
             calc.inverse_of_number()
+        elif choice == 'h':
+            calc.calc_menu()
         else:
             print("That is not a valid input.")
     print("Bye.")
@@ -79,6 +78,7 @@ def main():
     # print(calc.getTrigUnitMode())
     # calc.switchUnitsMode('deges')
     # print(calc.getTrigUnitMode())
+    calc.calc_menu()
     performCalcLoop(calc)
 
 if __name__ == '__main__':

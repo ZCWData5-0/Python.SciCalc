@@ -1,5 +1,7 @@
 import math
 from math import *
+from pprint import pprint
+
 
 class Calculator:
 
@@ -7,9 +9,55 @@ class Calculator:
         self.currentValue = 0.0
         self.currentMsg = ""
         self.stored_value = 0.0
+        self.menu_options = {
+            "h": "help",
+            "+": "add",
+            "-": "subtract",
+            "c": "clear display value",
+            "*": "multiply",
+            "/": "divide",
+            "x2": "square",
+            "sqrt": "square root",
+            "l": "common log",
+            "il": "inverse common log",
+            "ln": "natural log",
+            "ex": "inverse natural log",
+            "1/x": "multiplicative inverse",
+            "-x": "switch sign",
+            "m+": "save to memory",
+            "mc": "reset memory",
+            "mrc": "recall the current value from memory to the display",
+            "sin": "sine",
+            "cos": "cosine",
+            "tan": "tangent",
+            "is": "inverse sine",
+            "ic": "inverse cosine",
+            "it": "inverse tangent",
+            "su": "switch units (degrees and radians",
+            "sus": "set trig units to type",
+            "f": "factorial",
+
+        }
 
     def __str__(self):
         return str(self.currentValue)
+
+    def set_value(self, user_in):  # chris' code
+        if user_in == 'h':
+            self.calc_menu()
+            self.set_value(input("Enter a number: "))
+        try:
+            self.currentValue = float(user_in)
+            # x = float(input("Enter a number:"))
+            # self.currentValue = x
+        except ValueError:
+            print("nan")
+            self.set_value(input("Enter a number: "))
+
+    def calc_menu(self):
+        pprint(self.menu_options)
+
+    # for print menu print key and value pairs .tolower()
 
     def clear(self):
         self.currentValue = 0.0
