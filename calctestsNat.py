@@ -1,5 +1,6 @@
 import unittest
 from calculator import Calculator
+#from calculatorNat import Calculator
 
 
 class TestStringMethods(unittest.TestCase):
@@ -7,7 +8,7 @@ class TestStringMethods(unittest.TestCase):
     def test_add(self):
         c = Calculator()
         self.assertEqual(c.add(3, 3), 6)
-        #Not passing correct arguments thru yet, trying again tomorrow onsite.
+
 
     def test_add2(self):
         c = Calculator()
@@ -135,3 +136,6 @@ class TestStringMethods(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
+
+if __name__ == '__main__':
+    unittest.main()

@@ -3,9 +3,9 @@ import calculator
 ################################
 #please de-comment this and paste it within the calculator.py Class calulator to full functionality! :)
 #def set_value(self):
-#    if self.currentValue == 0.0:
-#        x = float(input("Enter a value:"))
-#        self.currentValue = x
+   # if self.currentValue == 0.0:
+   #     x = float(input("Enter a value:"))
+   #     self.currentValue = x
 ################################
 
 from calculator import Calculator
@@ -35,11 +35,16 @@ def performCalcLoop(calc):
             calc.set_value(input("Enter a number: "))
         choice = input("Operation? ")
         if choice == 'q':
+<<<<<<< HEAD
             break  # user types q to quit calulator.
         elif choice == 'c' or choice.__contains__('cl'):
             calc.clear()
             calc.set_value(input("Enter a number: "))
         elif choice == '+' or choice.__contains__('add') or choice.__contains__('plu'):
+=======
+            break  # user types q to quit calculator.
+        elif choice == '+':
+>>>>>>> f710998cad4d8f40df2be0654da60136d88e8dfd
             a = getNumber()
             calc.add(calc.value(), a)
         elif choice == '-' or choice.__contains__('sub') or choice.__contains__('min'):

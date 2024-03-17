@@ -22,6 +22,11 @@ class Calculator:
         else:
             self.trigUnitMode=uMode
 
+    def set_value(self):
+        if self.currentValue == 0.0:
+            x = float(input("Enter a value:"))
+            self.currentValue = x
+
     def getTrigUnitMode(self):
         return self.trigUnitMode
     def __str__(self):
