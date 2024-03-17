@@ -65,6 +65,7 @@ class Calculator:
 
     def mul(self, x, y):
         self.currentValue = x * y
+        return self.currentValue
 
     def div(self, x, y):
         try:
@@ -169,6 +170,22 @@ class Calculator:
     def in_nat_log(self, x):
         self.currentValue = exp(x)
         return self.currentValue
+
+    def displayModeBin(self):
+        self.currentValue = bin(int(self.currentValue))
+        #return ("The decimal value of", displayMode, "is:" + bin(displayMode), "in binary.")
+
+    def displayModeOct(self):
+        self.currentValue = oct(int(self.currentValue))
+        #return ("The decimal value of", displayMode, "is:"+ float(oct(displayMode)), "in octal.")
+    #
+    def displayModeHex(self):
+#        self.currentValue = hex(x)
+        return hex(int(self.currentValue))
+
+    # def displayModeDec(self):
+    #     self.currentValue = dec(int(self.currentValue))
+    #     #return ("The decimal value of", displayMode, "is:" + float(dec(displayMode)), "in decimal.")
 
 
 
