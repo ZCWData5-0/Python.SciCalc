@@ -1,5 +1,9 @@
 import tkinter as tk
+<<<<<<< HEAD:lydias_guicalc.py
 from lydias_calculator import Calculator
+=======
+from calculatorNat import Calculator
+>>>>>>> f710998cad4d8f40df2be0654da60136d88e8dfd:guicalc.py
 
 class CalcGUI:
     def __init__(self, master, engine):
