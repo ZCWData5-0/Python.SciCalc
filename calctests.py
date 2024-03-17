@@ -1,8 +1,22 @@
 import unittest
-from lydias_calculator import Calculator
+from calculator import Calculator
+from calculator import *
 import sys
 
 class TestStringMethods(unittest.TestCase):
+
+
+    def test_set_value_test(self):
+        #given
+        c = Calculator()
+        expected = 5.0
+        #when
+        c.set_value(5)
+        actual = c.value()
+        #then
+        self.assertEqual(expected, actual)
+
+
 
     def test_add(self):
         c = Calculator()
@@ -61,11 +75,19 @@ class TestStringMethods(unittest.TestCase):
 
     def test_inverse_of_a_number_five(self):
         c = Calculator()
-        self.assertEqual(c.common_log(5), -5)
+        #given
+        expected = -5
+        #when
+        c.set_value(5)
+        actual = c.inverse_of_number(c.value())
+
+        #then
+        self.assertEqual(expected, actual)#changed function to test numbers - chris
 
     def test_inverse_of_a_number_negative_five(self):
         c = Calculator()
-        self.assertEqual(c.common_log(-5), 5)
+        c.set_value(-5)
+        self.assertEqual(c.inverse_of_number(c.currentValue), 5)
 
     def test_inverse_of_a_number_zero(self):
         c = Calculator()
@@ -75,14 +97,14 @@ class TestStringMethods(unittest.TestCase):
         c = Calculator()
         c.add(2,2)
         c.save_to_memory()
-        self.assertEqual(c.stored_value,4)
+        self.assertEqual(c.stored_value, 4)
 
     def test_reset_memory(self):
         c = Calculator()
         c.add(2,2)
         c.save_to_memory()
         c.reset_memory()
-        self.assertEqual(c.stored_value,0)
+        self.assertEqual(c.stored_value, 0)
 
     def test_recall_from_memory(self):
         c = Calculator()

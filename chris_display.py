@@ -12,43 +12,53 @@ from calculator import Calculator
 
 
 def getNumber():
-    a = float(input("enter number "))
-    return a
-
+    try:
+        a = float(input("Enter a number: "))
+        return a
+    except ValueError:
+        a = float(input("Enter a number: "))
+        return a
 
 def displayResult(x: float):
      print(x, "\n")
 
 
 def performCalcLoop(calc):
+    displayResult(calc.value())
+    calc.set_value(input("Enter a number: "))
     while True:
         displayResult(calc.value())
-        calc.set_value()
+       # if calc.value == 0.0:
+       #     calc.set_value(input("Enter a number: "))
         if calc.value == 0.0:
             displayResult(calc.value())
+            calc.set_value(input("Enter a number: "))
         choice = input("Operation? ")
-        if choice == 'q' or 'quit':
+        if choice == 'q':
             break  # user types q to quit calulator.
-        elif choice == 'c' or 'clear':
+        elif choice == 'c' or choice.__contains__('cl'):
             calc.clear()
-        elif choice == '+' or 'add':
+            calc.set_value(input("Enter a number: "))
+        elif choice == '+' or choice.__contains__('add') or choice.__contains__('plu'):
             a = getNumber()
             calc.add(calc.value(), a)
-        elif choice == '-' or 'subtract' or 'sub':
+        elif choice == '-' or choice.__contains__('sub') or choice.__contains__('min'):
             a = getNumber()
             calc.sub(calc.value(), a)
-        elif choice == '*' or 'multiply' or 'mul':
+        elif choice == '*' or choice.__contains__('mul') or choice.__contains__('times'):
             a = getNumber()
             calc.mul(calc.value(), a)
-        elif choice == '/' or 'divide' or 'div':
+        elif choice == '/' or choice.__contains__('div'):
             a = getNumber()
             calc.div(calc.value(), a)
-        elif choice == 'square' or '^2':  # my code
-            calc.square(calc.value())
-        elif choice == 'square root' or 'sqrt':  # my code
+        elif choice == 'square' or choice == 'sq' or choice == 'sqre':  # my code
+            calc.square()
+        elif choice == 'square root' or choice == 'sqrt':  # my code
             calc.square_root(calc.value())
-        elif choice == 'factorial' or 'fact':
+        elif choice == 'factorial' or choice.__contains__('fa'):
             calc.factorial(calc.value())
+        elif choice.__contains__('inv') and not choice.__contains__('mul'):
+            calc.inverse_of_number()
         else:
             print("That is not a valid input.")
     print("Bye.")
@@ -57,12 +67,12 @@ def performCalcLoop(calc):
 # main start
 def main():
     calc = Calculator()
-    calc1 = Calculator()
-    print(calc.getTrigUnitMode())
-    print(calc1.getTrigUnitMode())
-    calc1.switchUnitsMode()
-    print(calc.getTrigUnitMode())
-    print(calc1.getTrigUnitMode())
+    #calc1 = Calculator()
+   # print(calc.getTrigUnitMode())
+    #print(calc1.getTrigUnitMode())
+    #calc1.switchUnitsMode()
+    #print(calc.getTrigUnitMode())
+   # print(calc1.getTrigUnitMode())
 
     # print(calc.getTrigUnitMode())
     # calc.switchUnitsMode('degrees')
