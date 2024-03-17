@@ -1,5 +1,5 @@
 import tkinter as tk
-from calculator import Calculator
+from lydias_calculator import Calculator
 
 class CalcGUI:
     def __init__(self, master, engine):
@@ -84,6 +84,7 @@ def main():
     root = tk.Tk()
     calculator = CalcGUI(root, calc_engine)
     root.mainloop()
+    # root.mainloop() pauses the execution of any further lines of code here
 
 #
 ### WHAT does this idiom do?
