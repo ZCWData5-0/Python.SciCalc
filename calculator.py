@@ -9,9 +9,14 @@ class Calculator:
 
     def __init__(self):
         self.currentValue = 0.0
+       
+        self.trigUnitMode='degrees'
+        self.memVal = 0.0      #my code
+
         self.currentMsg = ""
         self.stored_value = 0.0
         self.trigUnitMode='degrees'     #my code
+
 
     def switchUnitsMode(self, uMode = 'none'):  #my code
         if uMode == 'none':
@@ -59,6 +64,16 @@ class Calculator:
     def value(self):
         return self.currentValue
 
+
+    def getMemVal(self):
+        return self.memVal
+
+    def setValue(self,x):
+        self.currentValue = x
+        #return self.currentValue
+
+
+
     # evaluation routines
     def add(self, x, y):
         self.currentValue = x + y
@@ -80,6 +95,34 @@ class Calculator:
         except ZeroDivisionError:
             self.currentValue = None
             self.currentMsg = 'DIV BY ZERO'
+
+
+    def calculateSquare(self, x):   #my code
+        self.currentValue= x * x
+        return self.currentValue
+
+    def calculateSquareRroot(self, x):  #my code
+        self.currentValue=math.sqrt(x)
+        return self.currentValue
+
+    def calculateFactorial(self, x):
+        self.currentValue = math.factorial(x)
+        return self.currentValue
+
+    def calculateExponent(self, b, p):
+        self.currentValue = b**p
+        return self.currentValue
+
+    def memoryAdd(self, x, y):
+        self.memVal = x + y
+        return self.memVal
+
+    def memorySub(self , x,y):
+        self.memVal = x -y
+        return self.memVal
+
+    def recallMemory(self):
+        return self.memVal
 
     def square(self):   #my code
         self.currentValue = self.currentValue * self.currentValue
@@ -194,4 +237,7 @@ class Calculator:
 
 
 
+
+    def clearMemory(self):
+        self.memVal = 0.0
 # add lots more methods to this calculator class.
