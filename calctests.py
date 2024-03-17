@@ -1,5 +1,6 @@
 import unittest
-from lydias_calculator import Calculator
+from calculator import Calculator
+from calculator import *
 import sys
 
 class TestStringMethods(unittest.TestCase):
@@ -61,11 +62,11 @@ class TestStringMethods(unittest.TestCase):
 
     def test_inverse_of_a_number_five(self):
         c = Calculator()
-        self.assertEqual(c.common_log(5), -5)
+        self.assertEqual(c.inverse_of_number(c.set_value(5)), -5)#changed function to test numbers - chris
 
     def test_inverse_of_a_number_negative_five(self):
         c = Calculator()
-        self.assertEqual(c.common_log(-5), 5)
+        self.assertEqual(c.inverse_of_number(-5), 5)
 
     def test_inverse_of_a_number_zero(self):
         c = Calculator()

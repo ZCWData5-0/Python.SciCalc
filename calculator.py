@@ -4,6 +4,7 @@ import math
 from math import nan
 from math import *
 
+
 class Calculator:
 
     def __init__(self):
@@ -26,14 +27,22 @@ class Calculator:
     def __str__(self):
         return str(self.currentValue)
 
-    def set_value(self): # chris' code
-            try:
-                if self.currentValue == 0.0:
-                    x = float(input("Enter a number:"))
-                    self.currentValue = x
-            except ValueError:
-                print("Please enter a number")
-                self.set_value()
+    def set_value(self, user_in): # chris' code
+        try:
+            self.currentValue = float(user_in)
+                 # x = float(input("Enter a number:"))
+               # self.currentValue = x
+        except ValueError:
+                self.set_value(input("please enter a number"))
+
+    # def set_value(self): # chris' code
+    #        try:
+     #           if self.currentValue == 0.0:
+      #              x = float(input("Enter a number:"))
+       #             self.currentValue = x
+        #    except ValueError:
+         #       print("Please enter a number")
+          #      self.set_value()
 
 
 
@@ -63,17 +72,20 @@ class Calculator:
             self.currentValue = None
             self.currentMsg = 'DIV BY ZERO'
 
-    def square(self, x):   #my code
-        self.currentValue = x*x
-        return self.currentValue
+    def square(self):   #my code
+        self.currentValue = self.currentValue * self.currentValue
 
     def square_root(self, x):  #my code
         self.currentValue=math.sqrt(x)
         return self.currentValue
 
     def factorial(self, x):
-        self.currentValue = math.factorial(x)
-        return self.currentValue
+        if self.currentValue >=0:
+            self.currentValue = math.factorial(x)
+            return self.currentValue
+        else:
+            for i in range(int(self.currentValue)+1, 1):
+                self.currentValue *= float(i)
 
     def common_log(self, x):
         try:
@@ -97,7 +109,7 @@ class Calculator:
     def inverse_of_number(self):
         try:
             if self != 0:
-                self.currentValue = abs(self)
+                self.currentValue = self.currentValue - (self.currentValue * 2) #couldn't get this to work -chris abs(self)
         except ValueError:
             if self == 0:
                 self.currentValue = None
@@ -111,5 +123,38 @@ class Calculator:
 
     def recall_from_memory(self):
         self.currentValue = self.stored_value
+
+    def get_sin(self, x):
+        sin(x)
+        self.current_value = x
+
+    def get_cos(self, x):
+        cos(x)
+        self.current_value = x
+
+    def get_tan(self, x):
+        tan(x)
+        self.current_value = x
+
+    def get_asin(self, x):
+        asin(x)
+        self.current_value = x
+
+    def get_acos(self, x):
+        acos(x)
+        self.current_value = x
+
+    def get_atan(self, x):
+        atan(x)
+        self.current_value = x
+
+    def nat_log(self, x):
+        log(x)
+        self.currentValue = x
+
+    def in_nat_log(self,x):
+        exp(x)
+        self.currentValue= x
+
 
 # add lots more methods to this calculator class.
