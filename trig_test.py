@@ -53,43 +53,43 @@ class TestStringMethods(unittest.TestCase):
     def test_acos(self):
         c = Calculator()
         # given
-        expected = 0.9092974268256817
+        expected = 2
         # when
-        c.set_value(2)
+        c.set_value(-0.4161468365471424)
 
-        actual = c.get_sin(c.currentValue)
+        actual = c.get_acos(c.currentValue)
         # then
         self.assertEqual(expected, actual)
 
     def test_atan(self):
         c = Calculator()
         # given
-        expected = 0.9092974268256817
+        expected = 1.1071487177940906
         # when
         c.set_value(2)
 
-        actual = c.get_sin(c.currentValue)
+        actual = c.get_atan(c.currentValue)
         # then
         self.assertEqual(expected, actual)
 
     def test_nat_log(self):
         c = Calculator()
         # given
-        expected = 0.9092974268256817
+        expected = 0.6931471805599453
         # when
         c.set_value(2)
 
-        actual = c.get_sin(c.currentValue)
+        actual = c.nat_log(c.currentValue)
         # then
         self.assertEqual(expected, actual)
 
     def test_in_nat_log(self):
         c = Calculator()
         # given
-        expected = 0.9092974268256817
+        expected = 7.38905609893065
         # when
         c.set_value(2)
 
-        actual = c.get_sin(c.currentValue)
+        actual = c.in_nat_log(c.currentValue)
         # then
         self.assertEqual(expected, actual)

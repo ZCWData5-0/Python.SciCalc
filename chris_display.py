@@ -66,9 +66,10 @@ def performCalcLoop(calc):
         elif choice == 'factorial' or choice.__contains__('fa'):
             calc.factorial(calc.value())
         elif choice.__contains__('ss') and not choice.__contains__('mul'):
-            calc.inverse_of_number()
+            calc.inverse_of_number2(calc.value())
         elif choice.__contains__('mi') or choice.__contains__('mul'):
-            calc.inverse_of_number()
+            calc.inverse_of_number2(calc.value())
+
         elif choice == 'h':
             calc.calc_menu()
         else:
