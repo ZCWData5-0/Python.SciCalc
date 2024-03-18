@@ -10,13 +10,60 @@ class Calculator:
     def __init__(self):
         self.currentValue = 0.0
        
-        self.trigUnitMode='degrees'
+        self.trigUnitMode = 'degrees'
         self.memVal = 0.0      #my code
 
         self.currentMsg = ""
         self.stored_value = 0.0
         self.trigUnitMode='degrees'     #my code
+        self.menu_options = {
+            "h": "help",
+            "q": "quit",
+            "+": "add",
+            "-": "subtract",
+            "*": "multiply",
+            "/": "divide",
+            "square": "square",
+            "square root": "square root",
+            "l": "common log",
+            "il": "inverse common log",
+            "ln": "natural log",
+            "ex": "inverse natural log",
+            "mi": "multiplicative inverse",
+            "ss": "switch sign",
+            "c": "clear display value",
+            "m+": "save to memory",
+            "mc": "reset memory",
+            "mrc": "recall the current value from memory to the display",
+            "sin": "sine",
+            "cos": "cosine",
+            "tan": "tangent",
+            "is": "inverse sine",
+            "ic": "inverse cosine",
+            "it": "inverse tangent",
+            "su": "switch units (degrees and radians",
+            "sus": "set trig units to type",
+            "fact": "factorial",
+            "db": "display Binary",
+            "do": "Display Octal",
+            "dh": "Display Hex",
 
+        }
+
+    def set_menu_value(self, user_in):  # chris code
+        if user_in == 'h':
+            self.calc_menu()
+            self.set_value(input("Enter a number: "))
+        try:
+            self.currentValue = float(user_in)
+        # x = float(input("Enter a number:"))
+            # self.currentValue = x
+        except ValueError:
+            print("nan")
+            self.set_value(input("Enter a number: "))
+
+    def calc_menu(self):
+        print(self.menu_options)
 
     def switchUnitsMode(self, uMode = 'none'):  #my code
         if uMode == 'none':
@@ -166,7 +213,7 @@ class Calculator:
                 self.currentValue = None
                 self.currentMsg = 'DIV BY ZERO'
 
-    def inverse_of_number(self, x):
+    def inverse_of_number2(self, x):
         try:
             if self != 0:
                 self.currentValue = self.currentValue - (x * 2) #couldn't get this to work -chris abs(self)
@@ -225,15 +272,18 @@ class Calculator:
 
     def displayModeBin(self):
         self.currentValue = bin(int(self.currentValue))
-        #return ("The decimal value of", displayMode, "is:" + bin(displayMode), "in binary.")
+
+
 
     def displayModeOct(self):
         self.currentValue = oct(int(self.currentValue))
-        #return ("The decimal value of", displayMode, "is:"+ float(oct(displayMode)), "in octal.")
+
     #
     def displayModeHex(self):
 #        self.currentValue = hex(x)
-        return hex(int(self.currentValue))
+        self.currentValue = hex(int(self.currentValue))
+
+
 
     # def displayModeDec(self):
     #     self.currentValue = dec(int(self.currentValue))

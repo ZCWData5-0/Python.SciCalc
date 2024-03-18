@@ -22,6 +22,10 @@ def getNumber():
 def displayResult(x: float):
      print(x, "\n")
 
+def getExponentNum():
+    num = int(input("Enter the number for the power :"))
+    return num
+
 
 def performCalcLoop(calc):
     displayResult(calc.value())
@@ -52,13 +56,45 @@ def performCalcLoop(calc):
             a = getNumber()
             calc.div(calc.value(), a)
         elif choice == 'square' or choice == 'sq' or choice == 'sqre':  # my code
-            calc.square()
+            calc.calculateSquare()
         elif choice == 'square root' or choice == 'sqrt':  # my code
-            calc.square_root(calc.value())
+            calc.calculateSquareRroot(calc.value())
         elif choice == 'factorial' or choice.__contains__('fa'):
-            calc.factorial(calc.value())
-        elif choice.__contains__('inv') and not choice.__contains__('mul'):
-            calc.inverse_of_number()
+            calc.calculateFactorial(calc.value())
+        elif choice ==  'exponent' or choice == 'exp':
+            calc.calculateExponent(calc.value(), getExponentNum())
+        elif choice.__contains__('ss') and not choice.__contains__('mul'):
+            calc.inverse_of_number2(calc.value())
+        elif choice.__contains__('mi') or choice.__contains__('mul'):
+            calc.inverse_of_number2(calc.value())
+        elif choice == 'l':
+            calc.common_log()
+        elif choice == 'il':
+            calc.inverse_common_log()
+        elif choice == 'ln':
+            calc.nat_log(calc.value())
+        elif choice == 'ex':
+            calc.in_nat_log(calc.value())
+        elif choice == 'm+':
+            calc.save_to_memory()
+        elif choice == 'mc':
+            calc.clearMemory()
+        elif choice == 'mrc':
+            calc.recallMemory()
+        elif choice == 'sin':
+            calc.get_sin(calc.value())
+        elif choice == 'cos':
+            calc.get_cos(calc.value())
+        elif choice == 'tan':
+            calc.get_tan(calc.value())
+        elif choice == 'is':
+            calc.get_asin(calc.value())
+        elif choice == 'ic':
+            calc.get_acos(calc.value())
+        elif choice == 'it':
+            calc.get_atan(calc.value())
+        elif choice == 'h':
+            calc.set_menu_value('h')
 
             #NATHAN ADDING DISPLAY OPTIONS - TWO CHAR DD -display Decimal / DO -display Octal / DH -display Hexidecimal / DB -display Binary
         elif choice == ('DD') or choice ==('dd') or choice == ('dD') or choice ==('Dd'):

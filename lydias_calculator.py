@@ -102,14 +102,14 @@ class Calculator:
                 self.currentValue = None
                 self.currentMsg = 'DIV BY ZERO'
 
-    def inverse_of_number(self):
-        try:
-            if self != 0:
-                self.currentValue = abs(self)
-        except ValueError:
-            if self == 0:
-                self.currentValue = None
-                self.currentMsg = 'ZERO INVALID'
+   # def inverse_of_number(self):
+    #    try:
+     #       if self != 0:
+      #          self.currentValue = abs(self)
+       # except ValueError:
+        #    if self == 0:
+         #       self.currentValue = None
+          #      self.currentMsg = 'ZERO INVALID'
 
     def save_to_memory(self):
         self.stored_value = self.currentValue

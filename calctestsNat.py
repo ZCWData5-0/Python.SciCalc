@@ -84,6 +84,8 @@ class TestStringMethods(unittest.TestCase):
     def test_hex(self):
         c = Calculator()
         c.set_value(44222)
+        result = c.displayModeHex()
+        self.assertEqual(result, '0xacbe')
         self.assertEqual(c.displayModeHex(), '0xacbe')
 
 
@@ -97,9 +99,19 @@ class TestStringMethods(unittest.TestCase):
         c.set_value(555)
         self.assertEqual(c.displayModeHex(), '0x22b')
 
+
+
+
+
+
+
 #Found values for Oct/Bin
     def test_oct(self):
         c = Calculator()
+
+        c.set_value(44442)
+        self.assertEqual(c.displayModeOct(),5 )
+
         c.set_value(44222)
         self.assertEqual(c.displayModeOct(), '0o126276')
 
@@ -115,6 +127,11 @@ class TestStringMethods(unittest.TestCase):
     #
     def test_bin(self):
         c = Calculator()
+
+        expected = c.set_value(4)
+
+        self.assertEqual(c.displayModeBin(),'0b100')
+=======
         c.set_value(44222)
         self.assertEqual(c.displayModeBin(), '0b1010110010111110')
 
@@ -125,6 +142,7 @@ class TestStringMethods(unittest.TestCase):
 
     def test_bin3(self):
         c = Calculator()
+        self.assertEqual(c.hex(777, -222))
         c.set_value(555)
         self.assertEqual(c.displayModeBin(), '0b1000101011')
 
