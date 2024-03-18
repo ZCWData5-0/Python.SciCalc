@@ -90,15 +90,17 @@ class TestStringMethods(unittest.TestCase):
         c = Calculator()
         c.set_value(44222)
         result = c.displayModeHex()
-        self.assertEqual(result, 0xacbe)
+        self.assertEqual(result, '0xacbe')
 
     def test_hex2(self):
-        c = Calculator(55557)
-        self.assertEqual(c.displayModeHex(55555, +2), 0xd905)
+        c = Calculator()
+        c.set_value(55557)
+        self.assertEqual(c.displayModeHex(), '0xd905')
 
     def test_hex3(self):
         c = Calculator()
-        self.assertEqual(c.displayModeHex(777, -222), 0x309)
+        c.set_value(555)
+        self.assertEqual(c.displayModeHex(), '0x22b')
 
 
 
@@ -106,7 +108,8 @@ class TestStringMethods(unittest.TestCase):
 
     def test_oct(self):
         c = Calculator()
-        self.assertEqual(c.hex(44444, -222), )
+        c.set_value(44442)
+        self.assertEqual(c.displayModeOct(),5 )
 
     def test_oct2(self):
         c = Calculator()
@@ -122,7 +125,9 @@ class TestStringMethods(unittest.TestCase):
 
     def test_bin(self):
         c = Calculator()
-        self.assertEqual(c.hex(44444, -222), )
+        expected = c.set_value(4)
+
+        self.assertEqual(c.displayModeBin(),'0b100')
 
     def test_bin2(self):
         c = Calculator()
@@ -130,7 +135,7 @@ class TestStringMethods(unittest.TestCase):
 
     def test_bin3(self):
         c = Calculator()
-        self.assertEqual(c.hex(777, -222), )
+        self.assertEqual(c.hex(777, -222))
 
 
 if __name__ == '__main__':

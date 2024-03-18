@@ -220,7 +220,8 @@ class Calculator:
         return self.currentValue
 
     def displayModeBin(self):
-        self.currentValue = bin(int(self.currentValue))
+        x = bin(int(self.currentValue))
+        return str(x)
         #return ("The decimal value of", displayMode, "is:" + bin(displayMode), "in binary.")
 
     def displayModeOct(self):
@@ -229,7 +230,9 @@ class Calculator:
     #
     def displayModeHex(self):
 #        self.currentValue = hex(x)
-        return hex(int(self.currentValue))
+        x = hex(int(self.currentValue))
+        return str(x)
+
 
     # def displayModeDec(self):
     #     self.currentValue = dec(int(self.currentValue))
