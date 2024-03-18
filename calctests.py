@@ -40,11 +40,6 @@ class TestStringMethods(unittest.TestCase):
         c.common_log(100)
         self.assertEqual(c.currentValue, 2)
 
-    def test_common_log_max(self):
-        c = Calculator()
-        c.common_log(sys.maxsize)
-        self.assertEqual(c.currentValue, sys.maxsize)
-
     def test_common_log_none(self):
         c = Calculator()
         self.assertEqual(c.common_log(0), None)
@@ -55,23 +50,19 @@ class TestStringMethods(unittest.TestCase):
 
     def test_inverse_common_log_one(self):
         c = Calculator()
-        self.assertEqual(c.common_log(1), 10)
-
-    def test_inverse_common_log_max(self):
-        c = Calculator()
-        self.assertEqual(c.common_log(sys.maxsize), sys.maxsize)
+        self.assertEqual(c.inverse_common_log(1), 10)
 
     def test_multiplicative_inverse_of_a_number_five(self):
         c = Calculator()
-        self.assertEqual(c.common_log(5), 0.2)
+        self.assertEqual(c.multiplicative_inverse(5), 0.2)
 
     def test_multiplicative_inverse_of_a_number_zero(self):
         c = Calculator()
-        self.assertEqual(c.common_log(0), None)
+        self.assertEqual(c.multiplicative_inverse(0), None)
 
     def test_multiplicative_inverse_of_a_number_negative(self):
         c = Calculator()
-        self.assertEqual(c.common_log(-5), -0.2)
+        self.assertEqual(c.multiplicative_inverse(-5), -0.2)
 
     def test_inverse_of_a_number_five(self):
         c = Calculator()
@@ -91,7 +82,7 @@ class TestStringMethods(unittest.TestCase):
 
     def test_inverse_of_a_number_zero(self):
         c = Calculator()
-        self.assertEqual(c.common_log(0), None)
+        self.assertEqual(c.inverse_of_number(0), 0)
 
     def test_save_to_memory(self):
         c = Calculator()

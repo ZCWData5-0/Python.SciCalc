@@ -11,19 +11,20 @@ class Calculator:
         self.stored_value = 0.0
         self.menu_options = {
             "h": "help",
+            "q": "quit",
             "+": "add",
             "-": "subtract",
-            "c": "clear display value",
             "*": "multiply",
             "/": "divide",
-            "x2": "square",
-            "sqrt": "square root",
+            "square": "square",
+            "square root": "square root",
             "l": "common log",
             "il": "inverse common log",
             "ln": "natural log",
             "ex": "inverse natural log",
-            "1/x": "multiplicative inverse",
-            "-x": "switch sign",
+            "mi": "multiplicative inverse",
+            "ss": "switch sign",
+            "c": "clear display value",
             "m+": "save to memory",
             "mc": "reset memory",
             "mrc": "recall the current value from memory to the display",
@@ -35,14 +36,14 @@ class Calculator:
             "it": "inverse tangent",
             "su": "switch units (degrees and radians",
             "sus": "set trig units to type",
-            "f": "factorial",
+            "fact": "factorial",
 
         }
 
     def __str__(self):
         return str(self.currentValue)
 
-    def set_value(self, user_in):  # chris' code
+    def set_value(self, user_in):  # chris code
         if user_in == 'h':
             self.calc_menu()
             self.set_value(input("Enter a number: "))
@@ -57,7 +58,6 @@ class Calculator:
     def calc_menu(self):
         pprint(self.menu_options)
 
-    # for print menu print key and value pairs .tolower()
 
     def clear(self):
         self.currentValue = 0.0
@@ -119,5 +119,3 @@ class Calculator:
 
     def recall_from_memory(self):
         self.currentValue = self.stored_value
-
-# add lots more methods to this calculator class.

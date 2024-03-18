@@ -30,7 +30,7 @@ def performCalcLoop(calc):
         if calc.value == 0.0:
             displayResult(calc.value())
             calc.set_value(input("Enter a number: "))
-        choice = input("Operation? ")
+        choice = input("Operation? ").lower()
         if choice == 'q':
             break  # user types q to quit calulator.
         elif choice == 'c' or choice.__contains__('cl'):
@@ -54,7 +54,9 @@ def performCalcLoop(calc):
             calc.square_root(calc.value())
         elif choice == 'factorial' or choice.__contains__('fa'):
             calc.factorial(calc.value())
-        elif choice.__contains__('inv') and not choice.__contains__('mul'):
+        elif choice.__contains__('ss') and not choice.__contains__('mul'):
+            calc.inverse_of_number()
+        elif choice.__contains__('mi') or choice.__contains__('mul'):
             calc.inverse_of_number()
         elif choice == 'h':
             calc.calc_menu()
