@@ -1,5 +1,7 @@
 import math
 from math import *
+from pprint import pprint
+
 
 class Calculator:
 
@@ -7,9 +9,55 @@ class Calculator:
         self.currentValue = 0.0
         self.currentMsg = ""
         self.stored_value = 0.0
+        self.menu_options = {
+            "h": "help",
+            "q": "quit",
+            "+": "add",
+            "-": "subtract",
+            "*": "multiply",
+            "/": "divide",
+            "square": "square",
+            "square root": "square root",
+            "l": "common log",
+            "il": "inverse common log",
+            "ln": "natural log",
+            "ex": "inverse natural log",
+            "mi": "multiplicative inverse",
+            "ss": "switch sign",
+            "c": "clear display value",
+            "m+": "save to memory",
+            "mc": "reset memory",
+            "mrc": "recall the current value from memory to the display",
+            "sin": "sine",
+            "cos": "cosine",
+            "tan": "tangent",
+            "is": "inverse sine",
+            "ic": "inverse cosine",
+            "it": "inverse tangent",
+            "su": "switch units (degrees and radians",
+            "sus": "set trig units to type",
+            "fact": "factorial",
+
+        }
 
     def __str__(self):
         return str(self.currentValue)
+
+    def set_value(self, user_in):  # chris code
+        if user_in == 'h':
+            self.calc_menu()
+            self.set_value(input("Enter a number: "))
+        try:
+            self.currentValue = float(user_in)
+            # x = float(input("Enter a number:"))
+            # self.currentValue = x
+        except ValueError:
+            print("nan")
+            self.set_value(input("Enter a number: "))
+
+    def calc_menu(self):
+        pprint(self.menu_options)
+
 
     def clear(self):
         self.currentValue = 0.0
@@ -71,5 +119,3 @@ class Calculator:
 
     def recall_from_memory(self):
         self.currentValue = self.stored_value
-
-# add lots more methods to this calculator class.

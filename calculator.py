@@ -97,6 +97,9 @@ class Calculator:
             self.currentMsg = 'DIV BY ZERO'
 
 
+    def square(self, x):   #my code
+        self.currentValue = x * x # Lydia changed
+
     def calculateSquare(self, x):   #my code
         self.currentValue= x * x
         return self.currentValue
@@ -126,6 +129,7 @@ class Calculator:
 
     def square(self):   #my code
         self.currentValue = self.currentValue * self.currentValue
+
         return self.currentValue
 
     def square_root(self, x):  #my code
@@ -153,12 +157,12 @@ class Calculator:
         self.currentValue = math.pow(10, x)
         return self.currentValue
 
-    def multiplicative_inverse(self):
+    def multiplicative_inverse(self, x):
         try:
-            self.currentValue = 1 / self
+            self.currentValue = 1 / x # Lydia changed
             return self.currentValue
         except ZeroDivisionError:
-            if self == 0:
+            if x == 0:
                 self.currentValue = None
                 self.currentMsg = 'DIV BY ZERO'
 
