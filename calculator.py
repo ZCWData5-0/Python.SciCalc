@@ -9,9 +9,14 @@ class Calculator:
 
     def __init__(self):
         self.currentValue = 0.0
+       
+        self.trigUnitMode='degrees'
+        self.memVal = 0.0      #my code
+
         self.currentMsg = ""
         self.stored_value = 0.0
         self.trigUnitMode='degrees'     #my code
+
 
     def switchUnitsMode(self, uMode = 'none'):  #my code
         if uMode == 'none':
@@ -21,6 +26,11 @@ class Calculator:
                 self.trigUnitMode = 'degrees'
         else:
             self.trigUnitMode=uMode
+
+    def set_value(self):
+        if self.currentValue == 0.0:
+            x = float(input("Enter a value:"))
+            self.currentValue = x
 
     def getTrigUnitMode(self):
         return self.trigUnitMode
@@ -54,6 +64,16 @@ class Calculator:
     def value(self):
         return self.currentValue
 
+
+    def getMemVal(self):
+        return self.memVal
+
+    def setValue(self,x):
+        self.currentValue = x
+        #return self.currentValue
+
+
+
     # evaluation routines
     def add(self, x, y):
         self.currentValue = x + y
@@ -65,6 +85,7 @@ class Calculator:
 
     def mul(self, x, y):
         self.currentValue = x * y
+        return self.currentValue
 
     def div(self, x, y):
         try:
@@ -75,8 +96,40 @@ class Calculator:
             self.currentValue = None
             self.currentMsg = 'DIV BY ZERO'
 
+
     def square(self, x):   #my code
         self.currentValue = x * x # Lydia changed
+
+    def calculateSquare(self, x):   #my code
+        self.currentValue= x * x
+        return self.currentValue
+
+    def calculateSquareRroot(self, x):  #my code
+        self.currentValue=math.sqrt(x)
+        return self.currentValue
+
+    def calculateFactorial(self, x):
+        self.currentValue = math.factorial(x)
+        return self.currentValue
+
+    def calculateExponent(self, b, p):
+        self.currentValue = b**p
+        return self.currentValue
+
+    def memoryAdd(self, x, y):
+        self.memVal = x + y
+        return self.memVal
+
+    def memorySub(self , x,y):
+        self.memVal = x -y
+        return self.memVal
+
+    def recallMemory(self):
+        return self.memVal
+
+    def square(self):   #my code
+        self.currentValue = self.currentValue * self.currentValue
+
         return self.currentValue
 
     def square_root(self, x):  #my code
@@ -170,6 +223,25 @@ class Calculator:
         self.currentValue = exp(x)
         return self.currentValue
 
+    def displayModeBin(self):
+        self.currentValue = bin(int(self.currentValue))
+        #return ("The decimal value of", displayMode, "is:" + bin(displayMode), "in binary.")
+
+    def displayModeOct(self):
+        self.currentValue = oct(int(self.currentValue))
+        #return ("The decimal value of", displayMode, "is:"+ float(oct(displayMode)), "in octal.")
+    #
+    def displayModeHex(self):
+#        self.currentValue = hex(x)
+        return hex(int(self.currentValue))
+
+    # def displayModeDec(self):
+    #     self.currentValue = dec(int(self.currentValue))
+    #     #return ("The decimal value of", displayMode, "is:" + float(dec(displayMode)), "in decimal.")
 
 
+
+
+    def clearMemory(self):
+        self.memVal = 0.0
 # add lots more methods to this calculator class.

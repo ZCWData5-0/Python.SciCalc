@@ -2,17 +2,13 @@ import calculator
 
 ################################
 #please de-comment this and paste it within the calculator.py Class calulator to full functionality! :)
-
-
-
 #def set_value(self):
-   # if self.currentValue == 0.0:
-   #     x = float(input("Enter a value:"))
-   #     self.currentValue = x
-
+#    if self.currentValue == 0.0:
+#        x = float(input("Enter a value:"))
+#        self.currentValue = x
 ################################
 
-from lydias_calculator import Calculator
+from calculator import Calculator
 
 
 def getNumber():
@@ -37,17 +33,13 @@ def performCalcLoop(calc):
         if calc.value == 0.0:
             displayResult(calc.value())
             calc.set_value(input("Enter a number: "))
-        choice = input("Operation? ").lower()
+        choice = input("Operation? ")
         if choice == 'q':
-
             break  # user types q to quit calulator.
         elif choice == 'c' or choice.__contains__('cl'):
             calc.clear()
             calc.set_value(input("Enter a number: "))
         elif choice == '+' or choice.__contains__('add') or choice.__contains__('plu'):
-
-            break  # user types q to quit calculator.
-        elif choice == '+':
             a = getNumber()
             calc.add(calc.value(), a)
         elif choice == '-' or choice.__contains__('sub') or choice.__contains__('min'):
@@ -65,12 +57,18 @@ def performCalcLoop(calc):
             calc.square_root(calc.value())
         elif choice == 'factorial' or choice.__contains__('fa'):
             calc.factorial(calc.value())
-        elif choice.__contains__('ss') and not choice.__contains__('mul'):
+        elif choice.__contains__('inv') and not choice.__contains__('mul'):
             calc.inverse_of_number()
-        elif choice.__contains__('mi') or choice.__contains__('mul'):
-            calc.inverse_of_number()
-        elif choice == 'h':
-            calc.calc_menu()
+
+            #NATHAN ADDING DISPLAY OPTIONS - TWO CHAR DD -display Decimal / DO -display Octal / DH -display Hexidecimal / DB -display Binary
+        elif choice == ('DD') or choice ==('dd') or choice == ('dD') or choice ==('Dd'):
+                calc.displayModeDec()
+        elif choice == ('DB') or choice == ('db') or choice == ('dB') or choice == ('Db'):
+                calc.displayModeBin()
+        elif choice == ('DO') or choice == ('do') or choice == ('dO') or choice == ('Do'):
+                calc.displayModeOct()
+        elif choice == ('DH') or choice == ('dh') or choice == ('dH') or choice == ('Dh'):
+                calc.displayModeHex(calc.value())
         else:
             print("That is not a valid input.")
     print("Bye.")
@@ -91,7 +89,6 @@ def main():
     # print(calc.getTrigUnitMode())
     # calc.switchUnitsMode('deges')
     # print(calc.getTrigUnitMode())
-    calc.calc_menu()
     performCalcLoop(calc)
 
 if __name__ == '__main__':
