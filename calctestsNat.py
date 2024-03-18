@@ -81,56 +81,67 @@ class TestStringMethods(unittest.TestCase):
             self.assertEqual(c.div(8, 4), 2)
 
 
- #NOT SURE HOW TO TEST THESE YET:  Binary | Octal | Decimal(default) | Hexidecimal
-    # def displayModeBin(self):
-    #     c = Calculator()
-    #     self.assertEqual(c.displayMode(3, 3), 6)
-
     def test_hex(self):
         c = Calculator()
         c.set_value(44222)
-        result = c.displayModeHex()
-        self.assertEqual(result, 0xacbe)
+        self.assertEqual(c.displayModeHex(), '0xacbe')
+
 
     def test_hex2(self):
-        c = Calculator(55557)
-        self.assertEqual(c.displayModeHex(55555, +2), 0xd905)
+        c = Calculator()
+        c.set_value(55557)
+        self.assertEqual(c.displayModeHex(), '0xd905')
 
     def test_hex3(self):
         c = Calculator()
-        self.assertEqual(c.displayModeHex(777, -222), 0x309)
+        c.set_value(555)
+        self.assertEqual(c.displayModeHex(), '0x22b')
 
-
-
-
-
+#Found values for Oct/Bin
     def test_oct(self):
         c = Calculator()
-        self.assertEqual(c.hex(44444, -222), )
+        c.set_value(44222)
+        self.assertEqual(c.displayModeOct(), '0o126276')
 
     def test_oct2(self):
         c = Calculator()
-        self.assertEqual(c.hex(55555, +2), )
+        c.set_value(55557)
+        self.assertEqual(c.displayModeOct(), '0o154405')
 
     def test_oct3(self):
         c = Calculator()
-        self.assertEqual(c.hex(777, -222), )
-
-
-
-
-
+        c.set_value(555)
+        self.assertEqual(c.displayModeOct(), '0o1053')
+    #
     def test_bin(self):
         c = Calculator()
-        self.assertEqual(c.hex(44444, -222), )
+        c.set_value(44222)
+        self.assertEqual(c.displayModeBin(), '0b1010110010111110')
 
     def test_bin2(self):
         c = Calculator()
-        self.assertEqual(c.hex(55555, +2), )
+        c.set_value(55557)
+        self.assertEqual(c.displayModeBin(), '0b1101100100000101')
 
     def test_bin3(self):
         c = Calculator()
-        self.assertEqual(c.hex(777, -222), )
+        c.set_value(555)
+        self.assertEqual(c.displayModeBin(), '0b1000101011')
+
+    def test_dec(self):
+        c = Calculator()
+        c.set_value(555)
+        self.assertEqual(c.displayModeDec(), 555.0)
+
+    def test_dec2(self):
+        c = Calculator()
+        c.set_value(44222)
+        self.assertEqual(c.displayModeDec(), 44222.0)
+
+    def test_dec3(self):
+        c = Calculator()
+        c.set_value(55557)
+        self.assertEqual(c.displayModeDec(), 55557.0)
 
 
 if __name__ == '__main__':
